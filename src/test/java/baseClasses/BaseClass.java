@@ -15,6 +15,7 @@ public class BaseClass extends BrowserFactory {
 
     public void goTo() {
         driver.get(url);
+        driver.manage().window().maximize();
     }
 
     @AfterClass
