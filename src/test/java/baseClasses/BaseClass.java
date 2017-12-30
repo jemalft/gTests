@@ -1,5 +1,6 @@
 package baseClasses;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 
@@ -15,7 +16,7 @@ public class BaseClass extends BrowserFactory {
 
     public void goTo() {
         driver.get(url);
-        driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(1600,900));
     }
 
     @AfterClass
