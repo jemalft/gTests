@@ -11,7 +11,7 @@ import static pages.SourcePage.locator.pageTitle;
  */
 public class SourcePage extends BaseClass {
     static String url = "http://localhost:8080/zoomdata/admin.html#sources";
-    static String ExpectedTitle = "Need a Different Type of Data Source?";
+    static String ExpectedTitle = "Manage Connections";
 
 
     public void goToSource() {
@@ -25,7 +25,7 @@ public class SourcePage extends BaseClass {
 
 
     interface locator{
-        By pageTitle = By.cssSelector(".data-sources-link");
+        By pageTitle = By.cssSelector(".btn.zd-button.blue.connections-btn");
 
     }
 }
