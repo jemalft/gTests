@@ -16,9 +16,9 @@ public class LoginTest{
                   pages.Pages.loginPage().loginAsValidUser("admin","Z00mda1a!");
 
 }
-@Test(priority = 2)
+//@Test(priority = 2)
     public void canGoToSourcePage() throws InterruptedException {
-                  Thread.sleep(9000);
+                  //Thread.sleep(9000);
                   pages.Pages.sourcePage().goToSource();
                  // Pages.loginPage().loginAsValidUser("admin","Z00mda1a!");
                   Assert.assertTrue(pages.Pages.sourcePage().isAtSourcePage());
