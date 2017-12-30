@@ -16,7 +16,7 @@ public class BaseClass extends BrowserFactory {
 
     public void goTo() {
         driver.get(url);
-       driver.manage().window().setSize(new Dimension(1600,900));
+       //driver.manage().window().setSize(new Dimension(1600,900));
     }
 
     @AfterClass
