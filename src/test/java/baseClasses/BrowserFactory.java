@@ -4,6 +4,7 @@ package baseClasses;
  * Created by jemal on 10/14/17.
  */
 import io.github.bonigarcia.wdm.*;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -71,7 +72,9 @@ public class BrowserFactory {
 
        // ChromeDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(1600,900));
+
 
         return driver;
     }
