@@ -49,6 +49,13 @@ public class BrowserFactory {
 
     public static ChromeDriver getChromeInstance() {
 
+        ChromeOptions options;
+        options = new ChromeOptions();
+// To fix browser crash issue
+        options.addArguments("--start-maximized");
+        ChromeDriverManager.getInstance().setup();
+
+
         ChromeDriverManager.getInstance().setup();
 
 
@@ -57,10 +64,12 @@ public class BrowserFactory {
         prefs.put("credentials_enable_service", false);
         prefs.put("password_manager_enabled", false);
 
-        ChromeOptions options = new ChromeOptions();
+        options = new ChromeOptions();
         options.setExperimentalOption("prefs", prefs);
 
-        ChromeDriver driver = new ChromeDriver(options);
+        ChromeDriver driver = (null==options)? new ChromeDriver(): new ChromeDriver(options);
+
+       // ChromeDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
